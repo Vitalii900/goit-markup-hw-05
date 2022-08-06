@@ -53,6 +53,8 @@ body {
 /* Навигация */
 
 .link.nav {
+  position: relative;
+
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -79,6 +81,30 @@ body {
 
 .link.nav.current {
   color: var(--active-text-color);
+}
+
+.link.nav.next::after {
+  transform: scale(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.link.nav.next:hover::after {
+  transform: scale(1);
+}
+
+.link.nav.current::after, .link.nav.next::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 4px;
+  width: 100%;
+  left: 0;
+  bottom: -1px;
+
+  background-color: var(--active-text-color);
+  border: transparent;
+  border-radius: 2px;
 }
 
 /* Логотип */
@@ -120,6 +146,8 @@ body {
 .link:hover,
 .link:focus {
   color: var(--active-text-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-address {
@@ -351,6 +379,43 @@ body {
   margin-right: 30px;
 }
 
+.process-thumb {
+  position: relative;
+}
+
+.process-thumb:before {
+  content: "";
+  
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 70px;
+
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.image-process-title {
+  position: absolute;
+  left: 50%;
+  bottom: 27px;
+  transform: translate(-50%);
+  
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-hero);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* Команда */
 
 .team {
@@ -551,6 +616,58 @@ body {
 .footer-social-link:hover,
 .footer-social-link:focus {
   background-color: var(--active-text-color);
+}
+
+/* Модальное окно */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);  
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 528px;
+  height: 581px;
+
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  background-color: var(--text-hero);
+  border-radius: 4px;
+}
+
+.close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
 }
 
 /* Сброс отступов для заголовков и абзацев */

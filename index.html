@@ -25,8 +25,8 @@
         <nav>
           <ul class="site-nav list">
             <li class="item"><a href="./index.html" class="link nav current">Студія</a></li>
-            <li class="item"><a href="./portfolio.html" class="link nav">Портфоліо</a></li>
-            <li class="item"><a href="" class="link nav">Контакти</a></li>
+            <li class="item"><a href="./portfolio.html" class="link nav next">Портфоліо</a></li>
+            <li class="item"><a href="" class="link nav next">Контакти</a></li>
           </ul>
         </nav>
         <ul class="auth-nav list">
@@ -53,7 +53,7 @@
         <div class="gradient">
           <div class="container">
             <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-            <button class="booking" type="button">Замовити послугу</button>
+            <button data-modal-open class="booking" type="button">Замовити послугу</button>
           </div>
         </div>
       </section>
@@ -115,13 +115,22 @@
           <h2 class="process-title">Чим ми займаємося</h2>
           <ul class="list process-list">
             <li class="process-item">
-              <img src="./img/img1.jpg" alt="написання коду" width="370" />
+              <div class="process-thumb">
+                <img src="./img/img1.jpg" alt="написання коду" width="370" />
+                <p class="image-process-title">Десктопні додатки</p>
+              </div>
             </li>
             <li class="process-item">
-              <img src="./img/box2.jpg" alt="розробка додатків" width="370" />
+              <div class="process-thumb">
+                <img src="./img/box2.jpg" alt="розробка додатків" width="370" />
+                <p class="image-process-title">Мобільні додатки</p>
+              </div>
             </li>
             <li class="process-item">
-              <img src="./img/box3.jpg" alt="рішення для дизайну" width="370" />
+              <div class="process-thumb">
+                <img src="./img/box3.jpg" alt="рішення для дизайну" width="370" />
+                <p class="image-process-title">Дизайнерські рішення</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -349,5 +358,15 @@
         </div>
       </div>
     </footer>
+    <div data-modal class="backdrop is-hidden">
+      <div class="modal">
+        <button data-modal-close class="close" type="button">
+          <svg class="close-button" width="11" height="11">
+            <use href="./img/icons.svg#close-button"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./modal.js"></script>
   </body>
 </html>
