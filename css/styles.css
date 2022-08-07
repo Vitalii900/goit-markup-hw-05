@@ -89,7 +89,8 @@ body {
 }
 
 
-.link.nav.next:hover::after {
+.link.nav.next:hover::after,
+.link.nav.next:focus::after {
   transform: scale(1);
 }
 
