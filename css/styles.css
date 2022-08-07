@@ -381,7 +381,7 @@ body {
 /* Преимущества */
 
 .advantage {
-  background-color: var(--main-background-color);
+  background-color: var(--text-hero);
   padding-top: 94px;
   padding-bottom: 94px;
 }
@@ -393,6 +393,8 @@ body {
 
 .advantage-item {
   width: calc((100% - 90px) / 4);
+
+  border-radius: 4px;
 }
 
 .picture {
@@ -434,7 +436,7 @@ body {
 }
 
 .process {
-  background-color: var(--main-background-color);
+  background-color: var(--text-hero);
   padding-bottom: 94px;
 }
 
